@@ -2,16 +2,19 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-const Weather = () => {
+const Weather = ({ weather, temperature, location, humidity, description }) => {
+  const tempC = Math.round((temperature - 32) / 1.8)
+
   return (
     <View style={styles.weatherContainer}>
       <View style={styles.headerContainer}>
-        <MaterialCommunityIcons size={48} name='weather-sunny' color='#fff'/>
-        <Text style={styles.tempText}>Temperature</Text>
+        <MaterialCommunityIcons size={48} name='weather-sunny' color='#000000'/>
+        <Text style={styles.tempText}>{tempC}°C</Text>
       </View>
       <View style={styles.bodyContainer}>
-        <Text style={styles.title}>So Sunny Hunny!</Text>
-        <Text style={styles.subtitle}>Go grab some suncream and glasses!</Text>
+        <Text style={styles.title}>{weather}</Text>
+        <Text style={styles.paragraph}>in {location}</Text>
+        <Text style={styles.subtitle}>{description}</Text>
       </View>
     </View>
   )
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
   },
   tempText: {
     fontSize: 65,
-    color: '#fff'
+    color: '#000000'
   },
   bodyContainer: {
     flex: 2,
@@ -40,15 +43,19 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 60,
-    color: '#fff'
+    color: '#000000'
+  },
+  paragraph: {
+    fontSize: 16,
+    color: '#000000'
   },
   subtitle: {
     fontSize: 24,
-    color: '#fff',
+    color: '#000000',
   },
   time: {
     fontSize: 38,
-    color: '#fff'
+    color: '#000000'
   }
 })
 
