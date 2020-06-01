@@ -2,6 +2,7 @@
   "expo": {
     "name": "WeatherApp",
     "slug": "weather-app",
+    "privacy": "public",
     "platforms": [
       "ios",
       "android",
@@ -23,6 +24,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "extra": {
+      "mysecret": "34a44aebb303a96a3452bfc607b92f6b"
     }
   }
 }
